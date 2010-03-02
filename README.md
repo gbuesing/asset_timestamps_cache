@@ -6,7 +6,7 @@ A simple asset timestamping solution. Adapted from asset timestamping functional
 Allows you to set far-future expires headers on images, stylesheets, javascripts, flash etc. and
 bust the browser's cache only when the file has changed.
 
-For more on far-future expires headers, see http://developer.yahoo.com/performance/rules.html#expires
+For more on far-future expires headers, see [http://developer.yahoo.com/performance/rules.html#expires](http://developer.yahoo.com/performance/rules.html#expires)
 
 
 View Helper
