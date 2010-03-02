@@ -25,10 +25,14 @@ module AssetTimestampsCache
     @@asset_timestamps_cache.clear
   end
 
+  def self.timestamped_asset_path(asset_path)
+    timestamp = self[asset_path]
+    "#{asset_path}?#{timestamp}"
+  end
+
   module ViewHelper
     def timestamped_asset_path(asset_path)
-      timestamp = AssetTimestampsCache[asset_path]
-      "#{asset_path}?#{timestamp}"
+      AssetTimestampsCache.timestamped_asset_path(asset_path)
     end
   end
 

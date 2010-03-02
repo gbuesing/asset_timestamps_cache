@@ -8,10 +8,10 @@ class TestAssetTimestampsCache < Test::Unit::TestCase
   def setup
     AssetTimestampsCache.clear
     FileUtils.mkdir_p 'public'
+    FileUtils.touch 'public/fixture.txt'
   end
 
   def test_returns_mtime_for_file
-    FileUtils.touch 'public/fixture.txt'
     mtime = File.mtime('public/fixture.txt').to_i.to_s
     assert_equal mtime, AssetTimestampsCache['fixture.txt']
   end
